@@ -11,17 +11,34 @@ function Navbar() {
   const showMenu = () => {
     setMenuActive(!menuActive);
   };
-  const SuperLink = (props) => (
-    <NavLink className="navbar__menu-link" to={props.to} onClick={showMenu}>
-      {props.text}
-    </NavLink>
-  );
+  const menuItems = [
+    {
+      id: 1,
+      menu: "home",
+      link: "/",
+    },
+    {
+      id: 2,
+      menu: "works",
+      link: "works",
+    },
+    {
+      id: 3,
+      menu: "blog",
+      link: "blog",
+    },
+    {
+      id: 4,
+      menu: "contacts",
+      link: "contacts",
+    },
+  ];
 
   return (
     <nav className="navbar">
       <div className="container navbar__container">
         <Link to="/" className="navbar__logo">
-          <img src={logo} alt="" />
+          <img src={logo} alt="Logo" />
         </Link>
         <button onClick={showMenu} className="navbar__toggle">
           <img src={menuIcon} alt="asdf" />
@@ -32,10 +49,18 @@ function Navbar() {
             menuActive ? "navbar__menu navbar__menu--show" : "navbar__menu"
           }
         >
-          <SuperLink to="/" text="Home" />
-          <SuperLink to="/works" text="Works" />
-          <SuperLink to="/blog" text="Blog" />
-          <SuperLink to="/contact" text="Contacts" />
+          {menuItems.map((menuItem) => {
+            return (
+              <NavLink
+                onClick={showMenu}
+                to={menuItem.link}
+                className="navbar__menu-link"
+                key={menuItem.id}
+              >
+                {menuItem.menu}
+              </NavLink>
+            );
+          })}
         </div>
       </div>
     </nav>
