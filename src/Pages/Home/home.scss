@@ -31,23 +31,24 @@
     &-icon {
       font-size: 2em;
       transition: 0.3s ease;
-      fill: lighten($color: #000000, $amount: 30);
+      fill: lighten($color: #038cfd, $amount: 25);
       &:hover {
         transform: scale(1.2);
-        fill: #000000;
+        fill: #038eff;
         object-fit: cover;
       }
     }
     &-cta {
       display: inline-block;
-      background-color: #000000;
+      background-color: lighten($color: #038cfd, $amount: 20);
       padding: 10px 30px;
       transition: 0.3 ease;
       border-radius: 5px;
       color: white;
       &:hover {
-        background-color: yellowgreen;
-        color: #000000;
+        background-color: #038cfd;
+        transition: 0.2s ease;
+        transform: scale(1.1);
       }
     }
   }

@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import {Link} from "react-router-dom"
 import {init} from "ityped"
 import {FaGithub, FaInstagram, FaTelegram} from "react-icons/fa"
-import authorImg from "../../Pages/Home/author.jpeg";
+import authorImg from "../../images/author.jpeg";
 import "./home.scss";
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     init(animatedTextRef.current, {
       showCursor: true,
-      strings: ["Frontend React разработчик"],
+      strings: ["Frontend React Developer"],
       backDelay: 1500,
       backSpeed: 60,
     });
@@ -21,7 +21,7 @@ function Home() {
     <section className="home">
       <div className="container home__container">
         <div className="home__left">
-          <h1 className="home__left-title">Привет, Я Максатбек.</h1>
+          <h1 className="home__left-title">Hello, I'm Maksatbek.</h1>
           <p className="home__left-subtitle">
             <span ref={animatedTextRef}></span>
           </p>
@@ -58,7 +58,7 @@ function Home() {
             </li>
           </ul>
           <Link to="/contacts" className="home__left-cta">
-            Найми Меня
+            Hire Me
           </Link>
         </div>
         <div className="home__right">

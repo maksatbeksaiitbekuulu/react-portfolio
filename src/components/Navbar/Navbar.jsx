@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../components/Navbar/group1.png";
+import logo from "../../images/logo.png";
 
 import "./navbar.scss";
 import menuIcon from "../../images/menu.svg";
@@ -19,8 +19,8 @@ function Navbar() {
     },
     {
       id: 2,
-      menu: "works",
-      link: "works",
+      link: "about",
+      menu: "about",
     },
     {
       id: 3,
@@ -29,8 +29,8 @@ function Navbar() {
     },
     {
       id: 4,
-      menu: "contacts",
-      link: "contacts",
+      menu: "contact",
+      link: "contact",
     },
   ];
 
