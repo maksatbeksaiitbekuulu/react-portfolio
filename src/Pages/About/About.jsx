@@ -1,53 +1,165 @@
 import React from "react";
 import aboutImgs from "../../images/works.png";
+import { motion } from "framer-motion";
 import "./about.scss";
-import {SiHtml5, SiCss3, SiJavascript, SiSass, SiReact, SiDocker} from "react-icons/si"
-
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiSass,
+  SiReact,
+  SiDocker,
+} from "react-icons/si";
 
 function About() {
+  const skillsAnimation = {
+    hidden: {
+      y: -1000,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.3 },
+    }),
+  };
+
+  const worksVariants = {
+    hidden: {
+      opacity: 0,
+      x:300
+    },
+    visible: (id) =>({
+      opacity: 1,
+      x:0,
+      transition:{
+        delay: id*0.5
+      }
+    }),
+  };
+
+  const works = [
+    {
+      title: "Works1",
+      imgUrl: aboutImgs,
+    },
+    {
+      title: "Works1",
+      imgUrl: aboutImgs,
+    },
+    {
+      title: "Works1",
+      imgUrl: aboutImgs,
+    },
+  ];
   return (
     <section className="about">
       <div className="container">
-        <h1 className="about__title">Hello am Hero Coder!</h1>
+        <motion.h1
+          animate={{
+            rotate: 360,
+          }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            repeatDelay: 1,
+            duration: 2,
+            type: "spring",
+          }}
+          className="about__title"
+        >
+          Hello am Hero Coder!
+        </motion.h1>
         <span className="about__subtitle">Frontend React Developer</span>
         <div className="about__skills">
-          <h3 className="about__skills-title">My Skills</h3>
-          <ul className="about__skills-links">
-            <li className="about__skills-item">
-              <SiHtml5/>HTML
-            </li>
-            <li className="about__skills-item">
-              <SiCss3/>CSS
-            </li>
-            <li className="about__skills-item">
-              <SiJavascript/>JavaScript
-            </li>
-            <li className="about__skills-item">
-              <SiSass/>Sass
-            </li>
-            <li className="about__skills-item">
-              <SiReact/>React
-            </li>
-            <li className="about__skills-item">
-              <SiDocker/>Docker
-            </li>
-          </ul>
+          <motion.h3
+            initial={{
+              x: -1000,
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 1,
+            }}
+            className="about__skills-title"
+          >
+            My Skills
+          </motion.h3>
+          <motion.ul
+            initial="hidden"
+            whileInView="visible"
+            className="about__skills-links"
+          >
+            <motion.li
+              custom={1}
+              variants={skillsAnimation}
+              className="about__skills-item"
+            >
+              <SiHtml5 />
+              HTML
+            </motion.li>
+            <motion.li
+              custom={2}
+              variants={skillsAnimation}
+              className="about__skills-item"
+            >
+              <SiCss3 />
+              CSS
+            </motion.li>
+            <motion.li
+              custom={3}
+              variants={skillsAnimation}
+              className="about__skills-item"
+            >
+              <SiJavascript />
+              JavaScript
+            </motion.li>
+            <motion.li
+              custom={4}
+              variants={skillsAnimation}
+              className="about__skills-item"
+            >
+              <SiSass />
+              Sass
+            </motion.li>
+            <motion.li
+              custom={5}
+              variants={skillsAnimation}
+              className="about__skills-item"
+            >
+              <SiReact />
+              React
+            </motion.li>
+            <motion.li
+              custom={6}
+              variants={skillsAnimation}
+              className="about__skills-item"
+            >
+              <SiDocker />
+              Docker
+            </motion.li>
+          </motion.ul>
         </div>
         <div className="about__works">
           <h3 className="about__works-title">Laters Worcs</h3>
           <ul className="about__works-blocks">
-            <li className="about__works-block">
-              <img src={aboutImgs} alt="work" />
-              <h4>Works 1</h4>
-            </li>
-            <li className="about__works-block">
-              <img src={aboutImgs} alt="work" />
-              <h4>Works 2</h4>
-            </li>
-            <li className="about__works-block">
-              <img src={aboutImgs} alt="work" />
-              <h4>Works 3</h4>
-            </li>
+            {
+              works.map((work, id)=>(
+                <motion.li 
+                variants={worksVariants}
+                initial="hidden"
+                animate="visible"
+                key={id}
+                custom={id}
+                className="about__works-block">
+                  <img src={work.imgUrl} alt="Work" />
+                  <h4>{work.title}</h4>
+                </motion.li>
+              ))
+            }
           </ul>
         </div>
       </div>

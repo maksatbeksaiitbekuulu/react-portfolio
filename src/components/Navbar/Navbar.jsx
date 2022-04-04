@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../images/logo.png";
-
+import { motion } from "framer-motion";
 import "./navbar.scss";
 import menuIcon from "../../images/menu.svg";
 

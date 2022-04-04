@@ -1,6 +1,6 @@
 .home {
   min-height: calc(100vh - 54px);
-  padding: 30px 0;
+  padding: 40px 0 0 0;
 
   &__container {
     display: flex;
@@ -54,6 +54,7 @@
   }
   &__right {
     width: 45%;
+    text-align: right;
     &-img {
       width: 400px;
       height: 400px;
