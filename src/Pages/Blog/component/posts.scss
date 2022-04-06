@@ -1,0 +1,10 @@
+.posts{
+    border: 1px solid black;
+    padding: 0;
+    
+    &-item{
+        border: 1px solid rgb(118, 118, 118);
+        padding: 20px;
+        list-style: none;
+    }
+}

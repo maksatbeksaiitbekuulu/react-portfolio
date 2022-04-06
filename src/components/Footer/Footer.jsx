@@ -47,7 +47,7 @@ function Footer() {
             <a className="footer__connection-text" href="mailto:">msajitbekov@gmail.com</a>
           </div>
         </div>
-        <p class="copytext "> &copy; 2022 All rights reserved</p>
+        <p className="copytext "> &copy; 2022 All rights reserved</p>
       </div>
     </footer>
   );
