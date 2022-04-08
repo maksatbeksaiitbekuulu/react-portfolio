@@ -10,8 +10,12 @@ function Footer() {
       <div className="container">
         <div className="footer__contacts">
           <div className="footer__connection">
-            Call me: <br />
-            <a className="footer__connection-text" href="tell:+996709603067">+966 709 60 30 67</a>
+            <p>
+            Почта: <br />
+            <a className="footer__connection-text" href="mailto:">msajitbekov@gmail.com</a></p>
+            <p>
+            Тел: <br />
+            <a className="footer__connection-text" href="tell:+996709603067">+966 709 60 30 67</a></p>
           </div>
           <ul className="footer__links">
             <li>
@@ -42,10 +46,6 @@ function Footer() {
               </a>
             </li>
           </ul>
-          <div className="footer__connection">
-            Email: <br />
-            <a className="footer__connection-text" href="mailto:">msajitbekov@gmail.com</a>
-          </div>
         </div>
         <p className="copytext "> &copy; 2022 All rights reserved</p>
       </div>

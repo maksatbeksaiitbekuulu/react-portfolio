@@ -8,7 +8,6 @@ import {
   SiJavascript,
   SiSass,
   SiReact,
-  SiDocker,
 } from "react-icons/si";
 
 function About() {
@@ -132,14 +131,6 @@ function About() {
             >
               <SiReact />
               React
-            </motion.li>
-            <motion.li
-              custom={6}
-              variants={skillsAnimation}
-              className="about__skills-item"
-            >
-              <SiDocker />
-              Docker
             </motion.li>
           </motion.ul>
         </div>

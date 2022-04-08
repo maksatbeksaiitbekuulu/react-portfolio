@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./posts.scss";
 
 export const Posts = ({ posts, loading }) => {
@@ -8,10 +9,18 @@ export const Posts = ({ posts, loading }) => {
   return (
     <ul className="posts">
       {posts.map((post) => (
-        <li key={post.id} className="posts-item">
+        <motion.li 
+        initial={{
+          x: 1000,
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }} key={post.id} className="posts-item">
           <h2>{post.title}</h2>
           <p>{post.body}</p>
-        </li>
+        </motion.li>
       ))}
     </ul>
   );

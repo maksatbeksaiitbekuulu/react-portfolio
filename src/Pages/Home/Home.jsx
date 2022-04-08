@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     init(animatedTextRef.current, {
       showCursor: true,
-      strings: ["Frontend React Developer"],
+      strings: ["Frontend React разработчик"],
       backDelay: 1500,
       backSpeed: 60,
     });
@@ -42,7 +42,7 @@ function Home() {
             variants={textAnimation}
             className="home__left-title"
           >
-            Hello, I'm Maksatbek.
+            Привет! Я Максатбек.
           </motion.h1>
           <motion.p
             custom={2}
@@ -56,10 +56,7 @@ function Home() {
             variants={textAnimation}
             className="home__left-text"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ullam
-            quibusdam, saepe minima itaque reiciendis repellat voluptatum unde
-            explicabo perferendis. Consequatur dolor tempore est qui doloribus
-            nam. Sequi, reprehenderit libero!
+           Я закончил несколько курсов фронтенд-разработчика. Мой общий стаж разработки — год. Я неплохо разбираюсь в vanilla Javascript, предпочитаю использовать современную семантическую верстку HTML5, а также модули SASS/LESS/SCSS, Webpack или Gulp и классы стилей по методологии БЭМ.
           </motion.p>
           <motion.ul
             custom={4}
@@ -77,7 +74,7 @@ function Home() {
             </li>
             <li>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/sayitbekuulumaksat/?utm_medium=copy_link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -86,7 +83,7 @@ function Home() {
             </li>
             <li>
               <a
-                href="https://web.telegram.org/z/"
+                href="https://t.me/MaksatbekSaiitbekuulu"
                 target="_blank"
                 rel="noopener noreferrer "
               >
@@ -94,7 +91,7 @@ function Home() {
               </a>
             </li>
           </motion.ul>
-          <Link to="/contacts" className="home__left-cta">
+          <Link to="/contact" className="home__left-cta">
             Hire Me
           </Link>
         </motion.div>
