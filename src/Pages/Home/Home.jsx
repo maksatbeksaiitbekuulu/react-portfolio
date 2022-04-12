@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { init } from "ityped";
 import { FaGithub, FaInstagram, FaTelegram } from "react-icons/fa";
-import authorImg from "../../images/author.jpeg";
+import authorImg from "../../images/author.png";
 import "./home.scss";
 
 function Home() {
@@ -56,7 +56,7 @@ function Home() {
             variants={textAnimation}
             className="home__left-text"
           >
-           Я закончил несколько курсов фронтенд-разработчика. Мой общий стаж разработки — год. Я неплохо разбираюсь в vanilla Javascript, предпочитаю использовать современную семантическую верстку HTML5, а также модули SASS/LESS/SCSS, Webpack или Gulp и классы стилей по методологии БЭМ.
+           Я закончил несколько курсов фронтенд-разработчика. Мой общий стаж разработки — год. Я неплохо разбираюсь в  Javascript, предпочитаю использовать современную семантическую верстку HTML5, а также модули SASS/LESS/SCSS, Webpack и классы стилей по методологии БЭМ.
           </motion.p>
           <motion.ul
             custom={4}

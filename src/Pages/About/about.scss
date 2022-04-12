@@ -74,5 +74,19 @@
       width: 30%;
     }
   }
+  &__works{
+    &-block{
+      width: 40%;
+    }
+  }
+}
+}
+@media screen and (max-width :450px) {
+  .about{
+  &__works{
+    &-block{
+      width: 100%;
+    }
+  }
 }
 }

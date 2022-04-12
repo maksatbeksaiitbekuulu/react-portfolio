@@ -18,8 +18,8 @@ export const Posts = ({ posts, loading }) => {
           opacity: 1,
           x: 0,
         }} key={post.id} className="posts-item">
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
+          <h2 className="posts__title">{post.title}</h2>
+          <p className="posts__text">{post.body}</p>
         </motion.li>
       ))}
     </ul>

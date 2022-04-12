@@ -28,7 +28,7 @@ function Blog() {
   return (
     <section className="blog">
       <div className="container ">
-        <h1 style={{ textAlign: "center" }}>My blog</h1>
+        <h1 style={{ textAlign: "center" }}>Мой блог</h1>
         <Posts posts={currentPosts} loading={loading} />
         <Pagination
           postsPerPage={postsPerPage}

@@ -9,7 +9,6 @@ import Notfound from "./Pages/Notfound/Notfound";
 import Footer from "./components/Footer/Footer";
 
 import "./app.scss";
-// import Home from "./Pages/Home/Home";
 
 function App() {
   return (

@@ -1,97 +1,100 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { FaWhatsapp, FaDiscord, FaTelegram } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
+import { useForm } from "react-hook-form";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import marker from "../../images/marker.svg";
+
 import "./contact.scss";
 
-
 function Contact() {
-  const iconsAnimation = {
-    hidden: {
-      y: -1000,
-      opacity: 0,
-    },
-    visible: (custom) => ({
-      y: 0,
-      opacity: 1,
-      transition: { delay: custom * 0.2 },
-    }),
+  const {
+    register,
+    formState: { errors, isValid },
+    handleSubmit,
+    reset,
+  } = useForm({
+    mode: "onBlur",
+  });
+
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+    reset();
   };
+
+  const position = [42.83425232902889, 74.61583255022894];
+
+  const icon = L.icon({
+    iconUrl: marker,
+    iconAnchor: position,
+    iconSize: [55, 55],
+  });
   return (
     <section className="contact">
-      <div className="container">
-        <h1>Контакты</h1>
-        <p style={{lineHeight: "40px"}}>
-          На данной странице вы найдете все возможные варианты связаться со мной. <br />
-          В Discord, Email я бываю не часто. Поэтому, наиболее быстрый способ со
-          мной связаться — это Telegram или WhatsApp. <br /> На сообщения
-          отвечаю максимально быстро. Если меня нет на месте или занята , то в
-          любом случае, стараюсь дать ответ в течении суток.
-        </p>
-          <motion.ul
-          initial="hidden"
-          whileInView="visible"
-          className="contact__connections"
-          >
-            <motion.li custom={1}
-            
-            variants={iconsAnimation}
-            
-          className="contact__connections-item">
-              <a
-                href="https://wa.me/+996709603067"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaWhatsapp className="contact__connections-icon" />
-              </a>Whatsapp
-            </motion.li>
-            <motion.li custom={2}
-            
-            variants={iconsAnimation}
-            
-          className="contact__connections-item">
-              <a
-                href="mailto:maksatbek.saiitbek.on@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MdOutlineEmail className="contact__connections-icon" />
-              </a>
-              Почта
-            </motion.li>
-            <motion.li custom={3}
-            
-            variants={iconsAnimation}
-            
-          className="contact__connections-item">
-              <a
-                href="https://discord.com/channels/@me/#4110"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaDiscord className="contact__connections-icon" />
-                
-              </a>
-              Discord
-            </motion.li>
-            <motion.li custom={4}
-            
-            variants={iconsAnimation}
-            
-          className="contact__connections-item">
-              <a
-                href="https://t.me/MaksatbekSaiitbekuulu"
-                target="_blank"
-                rel="noopener noreferrer "
-              >
-                <FaTelegram className="contact__connections-icon" />
-              </a>Telegram
-            </motion.li>
-          </motion.ul>
+      <h1>Контакты</h1>
+      <div className="container contact__container">
+        <div className="contact__col">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>
+              Ваше имя:
+              <input
+                placeholder="Макс Сайитбеков"
+                {...register("name", {
+                  required: "Имя должно быть заполнено!",
+                  minLength: {
+                    value: 3,
+                    message: "Минимум 3 символа!",
+                  },
+                })}
+              />
+            </label>
+            <div className="contact__error">
+              {errors?.name && <p>{errors?.name?.message || "Error!"}</p>}
+            </div>
+            <label>
+              Ваша почта
+              <input
+                placeholder="maks@gmail.com"
+                {...register("email", {
+                  required: "Email должно быть заполнено!",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i,
+                    message: "Введите корректный email!",
+                  },
+                })}
+              />
+            </label>
+            <div className="contact__error">
+              {errors?.email && <p>{errors?.email?.message || "Error!"}</p>}
+            </div>
+            <label>
+            Ваше сообщение
+              <textarea
+                {...register("msg", {
+                  maxLength: {
+                    value: 10,
+                    message: "Максимум 10 символов",
+                  },
+                })}
+              ></textarea>
+            </label>
+            <div className="contact__error">
+              {errors?.msg && <p>{errors?.msg?.message || "Error!"}</p>}
+            </div>
+            <input type="submit" disabled={!isValid} />
+          </form>
+        </div>
+
+        <div className="contact__col">
+          <MapContainer center={position} zoom={20}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Marker position={position} icon={icon}>
+              <Popup>Филармония</Popup>
+            </Marker>
+          </MapContainer>
+        </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Contact;
+export default Contact
