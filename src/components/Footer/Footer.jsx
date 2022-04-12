@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import "./footer.scss";
 
 function Footer() {
+  const date = new Date()
   return (
     <footer className="footer">
       <div className="container">
@@ -47,7 +48,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <p className="copytext "> &copy; 2022 All rights reserved</p>
+        <p className="copytext " > Copyright  &copy; {date.getFullYear()} </p>
       </div>
     </footer>
   );

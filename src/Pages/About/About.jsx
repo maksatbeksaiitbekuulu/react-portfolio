@@ -67,9 +67,9 @@ function About() {
           }}
           className="about__title"
         >
-          Hello am Hero Coder!
+          Привет, герой кодер!
         </motion.h1>
-        <span className="about__subtitle">Frontend React Developer</span>
+        <span className="about__subtitle">Frontend React Разработчик</span>
         <div className="about__skills">
           <motion.h3
             initial={{
@@ -85,7 +85,7 @@ function About() {
             }}
             className="about__skills-title"
           >
-            My Skills
+            Мои навыки
           </motion.h3>
           <motion.ul
             initial="hidden"
@@ -135,7 +135,7 @@ function About() {
           </motion.ul>
         </div>
         <div className="about__works">
-          <h3 className="about__works-title">Laters Worcs</h3>
+          <h3 className="about__works-title">Позже работает</h3>
           <ul className="about__works-blocks">
             {
               works.map((work, id)=>(
