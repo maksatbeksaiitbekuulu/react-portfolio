@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../images/logo.png";
 import "./navbar.scss";
 import menuIcon from "../../images/menu.svg";
 
@@ -37,7 +36,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="container navbar__container">
         <Link to="/" className="navbar__logo">
-          <img src={logo} alt="Logo" />
+          Maksatbek
         </Link>
         <button onClick={showMenu} className="navbar__toggle">
           <img src={menuIcon} alt="asdf" />
