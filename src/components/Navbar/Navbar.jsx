@@ -36,7 +36,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="container navbar__container">
         <Link to="/" className="navbar__logo">
-          Maksatbek
+          Maksat
         </Link>
         <button onClick={showMenu} className="navbar__toggle">
           <img src={menuIcon} alt="asdf" />
